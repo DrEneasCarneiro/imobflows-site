@@ -14,7 +14,7 @@ apple-touch-icon.png / icon-32.png / icon-192.png / icon-512.png
 og.png              Imagem de compartilhamento (Open Graph)
 site.webmanifest    Manifesto PWA
 robots.txt / sitemap.xml
-CNAME / .nojekyll   Configuração do domínio e publicação no GitHub Pages
+.nojekyll           Publicação direta dos arquivos no GitHub Pages
 nginx.conf          Configuração nginx (headers de segurança, gzip, cache)
 Dockerfile          Imagem nginx pronta pra produção
 ```
@@ -23,8 +23,8 @@ Dockerfile          Imagem nginx pronta pra produção
 
 O site é publicado automaticamente a partir da raiz da branch `main`:
 
-- Endereço provisório: `https://dreneascarneiro.github.io/imobflows-site/`
-- Domínio definitivo: `https://imobflows.com.br`
+- Endereço ativo: `https://dreneascarneiro.github.io/imobflows-site/`
+- Domínio definitivo, após configurar o DNS: `https://imobflows.com.br`
 
 Cada `git push` para `main` atualiza o site. O GitHub Pages é usado apenas para
 esta landing page estática; a aplicação SaaS e sua infraestrutura permanecem
@@ -72,6 +72,10 @@ CNAME  www    dreneascarneiro.github.io
 
 O GitHub emite e renova o certificado HTTPS automaticamente após a propagação.
 Não use registros curinga (`*`) para este domínio.
+
+Quando os registros já estiverem propagados, abra **Settings → Pages** no
+repositório, informe `imobflows.com.br` em **Custom domain** e ative
+**Enforce HTTPS** assim que a opção aparecer.
 
 ## Formulário de contato
 

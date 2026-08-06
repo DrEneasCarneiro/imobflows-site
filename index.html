@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ImobFlow — A plataforma de cobrança do mercado imobiliário</title>
 <meta name="description" content="Cobrança automatizada pelo WhatsApp oficial, integrada ao sistema de gestão que gera os seus boletos. Régua multicanal, portal do cliente e dashboard parametrizável.">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/icon-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0B2A45">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ImobFlow">
@@ -854,8 +854,8 @@
   } else if (ticks) { ticks.style.color = '#34b7f1'; }
 
   // ---- Lead form (client-side validation + confirmation) ----
-  // NOTE: preview do Artifact valida e confirma no navegador. No deploy (Vercel),
-  // o submit conecta ao backend real (e-mail/CRM/banco) para captura do lead.
+  // O formulário valida e confirma no navegador. A captura do lead precisa ser
+  // conectada separadamente a um backend (e-mail/CRM/banco).
   (function () {
     var form = document.getElementById('leadForm');
     if (!form) return;

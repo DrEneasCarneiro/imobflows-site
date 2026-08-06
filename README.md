@@ -14,9 +14,21 @@ apple-touch-icon.png / icon-32.png / icon-192.png / icon-512.png
 og.png              Imagem de compartilhamento (Open Graph)
 site.webmanifest    Manifesto PWA
 robots.txt / sitemap.xml
+CNAME / .nojekyll   Configuração do domínio e publicação no GitHub Pages
 nginx.conf          Configuração nginx (headers de segurança, gzip, cache)
 Dockerfile          Imagem nginx pronta pra produção
 ```
+
+## Publicação atual — GitHub Pages
+
+O site é publicado automaticamente a partir da raiz da branch `main`:
+
+- Endereço provisório: `https://dreneascarneiro.github.io/imobflows-site/`
+- Domínio definitivo: `https://imobflows.com.br`
+
+Cada `git push` para `main` atualiza o site. O GitHub Pages é usado apenas para
+esta landing page estática; a aplicação SaaS e sua infraestrutura permanecem
+separadas.
 
 ## Rodar localmente
 
@@ -25,7 +37,7 @@ python3 -m http.server 8080
 # abra http://localhost:8080
 ```
 
-## Deploy no seu servidor
+## Deploy futuro no seu servidor
 
 **Opção A — Docker (recomendada)**
 ```bash
@@ -46,16 +58,20 @@ sudo nginx -t && sudo systemctl reload nginx
 
 **Opção C — qualquer host estático:** basta servir a pasta.
 
-## Domínio e SSL
+## DNS atual no Registro.br
 
-1. No **registro.br**, aponte o domínio para o IP do seu servidor:
-   - `A  @    <IP_DO_SERVIDOR>`
-   - `A  www  <IP_DO_SERVIDOR>`
-2. Emita o certificado TLS (ex.: Let's Encrypt):
-   ```bash
-   sudo certbot --nginx -d imobflows.com.br -d www.imobflows.com.br
-   ```
-   Alternativa: usar **Caddy**, que resolve o SSL automaticamente.
+Crie estes registros no **Registro.br**:
+
+```text
+A      @      185.199.108.153
+A      @      185.199.109.153
+A      @      185.199.110.153
+A      @      185.199.111.153
+CNAME  www    dreneascarneiro.github.io
+```
+
+O GitHub emite e renova o certificado HTTPS automaticamente após a propagação.
+Não use registros curinga (`*`) para este domínio.
 
 ## Formulário de contato
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imobflows.com.br/sitemap.xml

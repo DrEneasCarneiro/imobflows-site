@@ -1,0 +1,7 @@
+.git
+.gitignore
+.dockerignore
+.vercel
+README.md
+*.log
+.DS_Store

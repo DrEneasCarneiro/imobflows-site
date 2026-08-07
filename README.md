@@ -23,8 +23,8 @@ Dockerfile          Imagem nginx pronta pra produção
 
 O site é publicado automaticamente a partir da raiz da branch `main`:
 
-- Endereço ativo: `https://dreneascarneiro.github.io/imobflows-site/`
-- Domínio definitivo, após configurar o DNS: `https://imobflows.com.br`
+- Domínio ativo: `https://imobflows.com.br`
+- Endereço técnico: `https://dreneascarneiro.github.io/imobflows-site/`
 
 Cada `git push` para `main` atualiza o site. O GitHub Pages é usado apenas para
 esta landing page estática; a aplicação SaaS e sua infraestrutura permanecem
@@ -70,12 +70,17 @@ A      @      185.199.111.153
 CNAME  www    dreneascarneiro.github.io
 ```
 
-O GitHub emite e renova o certificado HTTPS automaticamente após a propagação.
-Não use registros curinga (`*`) para este domínio.
+O GitHub emite e renova o certificado HTTPS automaticamente. A opção
+**Enforce HTTPS** está ativa. Não use registros curinga (`*`) para este domínio.
 
-Quando os registros já estiverem propagados, abra **Settings → Pages** no
-repositório, informe `imobflows.com.br` em **Custom domain** e ative
-**Enforce HTTPS** assim que a opção aparecer.
+## Segurança
+
+- HTTPS obrigatório, com redirecionamento permanente de HTTP para HTTPS.
+- DNSSEC ativo no Registro.br.
+- Sem bibliotecas, scripts ou fontes carregados de terceiros.
+- Política de segurança do conteúdo bloqueia scripts externos, objetos,
+  conexões e submissões de formulário não autorizadas.
+- Nenhuma credencial ou segredo faz parte do site.
 
 ## Formulário de contato
 
